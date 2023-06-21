@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="toto2"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- <xacro:include filename="$(find toto2_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find toto2_description)/urdf/toto.trans" />
+  <xacro:include filename="$(find toto2_description)/urdf/toto.gazebo" /> -->
+
+  <!-- BASE LINKS AND JOINTS OF ROBOT ARE IN THIS THESE ALLOW THE ROBOT TO NAVIGATE-->
+
+  <link name="base_footprint"/>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-6.090306880278278e-16 0.002513049838439521 0.1635865428520959" rpy="0 0 0"/>
+      <mass value="7.0"/>
+      <inertia ixx="0.380455" iyy="0.569614" izz="0.629258" ixy="0.0" iyz="0.004146" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 -1.57079633"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 -1.57079633"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="right_wheel_1">
+    <inertial>
+      <origin xyz="0.03541204935975309 -2.4243289958354717e-14 -9.020562075079397e-17" rpy="0 0 0"/>
+      <mass value="0.3"/>
+      <inertia ixx="0.002407" iyy="0.001396" izz="0.001396" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.1195 0.0 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.1195 0.0 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="left_wheel_1">
+    <inertial>
+      <origin xyz="-0.03541204935975312 4.3327407697699233e-14 -6.245004513516506e-17" rpy="0 0 0"/>
+      <mass value="0.3"/>
+      <inertia ixx="0.002407" iyy="0.001396" izz="0.001396" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.1195 0.0 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.1195 0.0 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <origin xyz=" 0.0 0.1195 0.0499" rpy="0 0 -1.57079633"/>
+    <parent link="base_link"/>
+    <child link="left_wheel_1"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <origin xyz="0.0 -0.1195 0.0499" rpy="0 0 -1.57079633"/>
+    <parent link="base_link"/>
+    <child link="right_wheel_1"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+  </joint>
+
+  <!-- THE FOLLOWING ARE SENSOR DESCRIPTORS-->
+  <!-- LIDAR -->
+  <link name="lidar_1">
+    <inertial>
+      <origin xyz="2.2068762530809514e-10 0.08500000036781817 -0.07958250099962488" rpy="0 0 0"/>
+      <mass value="0.2"/>
+      <inertia ixx="0.000336" iyy="0.000279" izz="0.000513" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 -0.085 -0.17" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.0 -0.085 -0.17" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://toto2_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_1"/>
+    <origin xyz="0.1 0.0 0.17" rpy="0 0 0"/>
+  </joint>
+  <!-- CAMERA -->
+  <link name="camera_link1_1">
+  </link>
+
+  <link name="camera_link2_1">
+  </link>
+
+  <link name="camera_1">
+  </link>
+
+  <link name="imu_link">
+  </link>
+
+  <joint name="base" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.1" rpy="0 0 0" />
+    <axis xyz="0.0 0.0 1.0" />
+  </joint>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.0 0.0 0.17" rpy="0 0 0" />
+    <axis xyz="0.0 0.0 1.0" />
+  </joint>
+
+  <joint name="camera_joint_1" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link1_1"/>
+    <origin xyz="0.16 0.0 0.2795" rpy="0 0 0" />
+    <axis xyz="0.0 0.0 1.0" />
+  </joint>
+
+  <joint name="camera_joint_2" type="fixed">
+    <parent link="camera_link1_1"/>
+    <child link="camera_link2_1"/>
+    <origin xyz="0.03 0.0 0.042" rpy="0 0 0" />
+    <axis xyz="0.0 1.0 0.0" />
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="camera_link2_1"/>
+    <child link="camera_1"/>
+    <origin xyz="0.020 0.01 0.015" rpy="0 0 0" />
+  </joint>
+
+</robot>
