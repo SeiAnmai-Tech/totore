@@ -73,20 +73,6 @@
     </collision>
   </link>
 
-  <joint name="left_wheel_joint" type="continuous">
-    <origin xyz=" 0.0 0.1195 0.0499" rpy="0 0 -1.57079633"/>
-    <parent link="base_link"/>
-    <child link="left_wheel_1"/>
-    <axis xyz="-1.0 0.0 0.0"/>
-  </joint>
-
-  <joint name="right_wheel_joint" type="continuous">
-    <origin xyz="0.0 -0.1195 0.0499" rpy="0 0 -1.57079633"/>
-    <parent link="base_link"/>
-    <child link="right_wheel_1"/>
-    <axis xyz="-1.0 0.0 0.0"/>
-  </joint>
-
   <!-- THE FOLLOWING ARE SENSOR DESCRIPTORS-->
   <!-- LIDAR -->
   <link name="lidar_1">
@@ -110,11 +96,6 @@
     </collision>
   </link>
 
-  <joint name="lidar_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="lidar_1"/>
-    <origin xyz="0.1 0.0 0.17" rpy="0 0 0"/>
-  </joint>
   <!-- CAMERA -->
   <link name="camera_link1_1">
   </link>
@@ -127,6 +108,13 @@
 
   <link name="imu_link">
   </link>
+
+  <!-- Joints -->
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_1"/>
+    <origin xyz="0.1 0.0 0.17" rpy="0 0 3.14"/>
+  </joint>
 
   <joint name="base" type="fixed">
     <parent link="base_footprint"/>
@@ -162,4 +150,29 @@
     <origin xyz="0.020 0.01 0.015" rpy="0 0 0" />
   </joint>
 
+  <joint name="left_wheel_joint" type="fixed">
+    <origin xyz=" 0.0 0.1195 0.0499" rpy="0 0 -1.57079633"/>
+    <parent link="base_link"/>
+    <child link="left_wheel_1"/>
+  </joint>
+
+  <joint name="right_wheel_joint" type="fixed">
+    <origin xyz="0.0 -0.1195 0.0499" rpy="0 0 -1.57079633"/>
+    <parent link="base_link"/>
+    <child link="right_wheel_1"/>
+  </joint>
+
+  <!-- <joint name="left_wheel_joint" type="continuous">
+    <origin xyz=" 0.0 0.1195 0.0499" rpy="0 0 -1.57079633"/>
+    <parent link="base_link"/>
+    <child link="left_wheel_1"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <origin xyz="0.0 -0.1195 0.0499" rpy="0 0 -1.57079633"/>
+    <parent link="base_link"/>
+    <child link="right_wheel_1"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+  </joint> -->
 </robot>

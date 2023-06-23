@@ -20,18 +20,6 @@ def generate_launch_description():
     )
     ld.add_action(odom_node)
 
-    # Add the third command: ros2 launch rplidar_ros view_rplidar.launch.py
-    # view_rplidar_node = ExecuteProcess(
-    #     cmd=['ros2', 'launch', 'rplidar_ros', 'view_rplidar.launch.py']
-    # )
-    # ld.add_action(view_rplidar_node)
-
-    # Add the fourth command: ros2 launch toto2_desc nav2.launch.py
-    view_robot_node = ExecuteProcess(
-        cmd=['ros2', 'launch', 'toto2_desc', 'nav2.launch.py']
-    )
-    ld.add_action(view_robot_node)
-
     return ld
 
 if __name__ == '__main__':

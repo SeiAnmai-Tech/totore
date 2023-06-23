@@ -17,7 +17,7 @@ def generate_launch_description():
   default_rviz_config_path = os.path.join(pkg_share, 'rviz/nav2_config.rviz')
   world_file_name = 'toto_world/house.world'
   world_path = os.path.join(pkg_share, 'worlds', world_file_name)
-  nav2_dir = FindPackageShare(package='toto2_navigation').find('toto2_navigation') 
+  nav2_dir = FindPackageShare(package='toto2_nav').find('toto2_nav') 
   nav2_launch_dir = os.path.join(nav2_dir, 'launch') 
   static_map_path = os.path.join(pkg_share, 'maps', 'house.yaml')
   nav2_params_path = os.path.join(param_pkg_share, 'params', 'toto2_nav2_params.yaml')
@@ -116,7 +116,7 @@ def generate_launch_description():
 
   declare_use_simulator_cmd = DeclareLaunchArgument(
     name='use_simulator',
-    default_value='True',
+    default_value='False',
     description='Whether to start the simulator')
 
   declare_world_cmd = DeclareLaunchArgument(
@@ -138,13 +138,13 @@ def generate_launch_description():
     arguments=[default_model_path])
 
   # Launch RViz
-  start_rviz_cmd = Node(
-    condition=IfCondition(use_rviz),
-    package='rviz2',
-    executable='rviz2',
-    name='rviz2',
-    output='screen',
-    arguments=['-d', rviz_config_file])    
+  # start_rviz_cmd = Node(
+  #   condition=IfCondition(use_rviz),
+  #   package='rviz2',
+  #   executable='rviz2',
+  #   name='rviz2',
+  #   output='screen',
+  #   arguments=['-d', rviz_config_file])    
 
   # Launch the ROS 2 Navigation Stack
   start_ros2_navigation_cmd = IncludeLaunchDescription(
@@ -169,18 +169,15 @@ def generate_launch_description():
   ld.add_action(declare_map_yaml_cmd)
   ld.add_action(declare_model_path_cmd)
   ld.add_action(declare_params_file_cmd)
-  ld.add_action(declare_rviz_config_file_cmd)
   ld.add_action(declare_simulator_cmd)
   ld.add_action(declare_slam_cmd)
   ld.add_action(declare_use_robot_state_pub_cmd)  
-  ld.add_action(declare_use_rviz_cmd) 
   ld.add_action(declare_use_sim_time_cmd)
   ld.add_action(declare_use_simulator_cmd)
   ld.add_action(declare_world_cmd)
 
   # Add any actions
   ld.add_action(start_robot_state_publisher_cmd)
-  ld.add_action(start_rviz_cmd)
   ld.add_action(start_ros2_navigation_cmd)
 
   return ld
