@@ -17,9 +17,9 @@ def generate_launch_description():
     )
     ld.add_action(ros2_command)
 
-    # Add the third command: ros2 launch rplidar_ros view_rplidar.launch.py
+    # Add the third command: ros2 launch rplidar_ros rplidar.launch.py
     rplidar_command = ExecuteProcess(
-        cmd=['ros2', 'launch', 'rplidar_ros', 'view_rplidar.launch.py']
+        cmd=['ros2', 'launch', 'rplidar_ros', 'rplidar.launch.py']
     )
     ld.add_action(rplidar_command)
 

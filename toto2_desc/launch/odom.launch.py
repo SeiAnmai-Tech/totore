@@ -20,6 +20,13 @@ def generate_launch_description():
     )
     ld.add_action(odom_node)
 
+    # Add the third command: ros2 run py_pubsub initialpose
+    # initialpose_node = Node(
+    #     package='py_pubsub',
+    #     executable='initialpose'
+    # )
+    # ld.add_action(initialpose_node)
+
     return ld
 
 if __name__ == '__main__':

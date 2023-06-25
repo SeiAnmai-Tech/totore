@@ -203,9 +203,9 @@ local_costmap:
           marking: True
           data_type: "LaserScan"
           raytrace_max_range: 5.0
-          raytrace_min_range: 0.0
+          raytrace_min_range: 0.25
           obstacle_max_range: 4.5
-          obstacle_min_range: 0.0
+          obstacle_min_range: 0.25
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 10.0
@@ -227,9 +227,9 @@ local_costmap:
           marking: True
           data_type: "LaserScan"
           raytrace_max_range: 5.0
-          raytrace_min_range: 0.0
+          raytrace_min_range: 0.25
           obstacle_max_range: 4.5
-          obstacle_min_range: 0.0
+          obstacle_min_range: 0.25
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
@@ -258,9 +258,9 @@ global_costmap:
           marking: True
           data_type: "LaserScan"
           raytrace_max_range: 3.0
-          raytrace_min_range: 0.0
+          raytrace_min_range: 0.25
           obstacle_max_range: 2.5
-          obstacle_min_range: 0.0
+          obstacle_min_range: 0.25
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
@@ -281,9 +281,9 @@ global_costmap:
           marking: True
           data_type: "LaserScan"
           raytrace_max_range: 5.0
-          raytrace_min_range: 0.0
+          raytrace_min_range: 0.25
           obstacle_max_range: 4.5
-          obstacle_min_range: 0.0
+          obstacle_min_range: 0.25
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 10.0
@@ -295,7 +295,7 @@ map_server:
     use_sim_time: True
     # Overridden in launch by the "map" launch configuration or provided default value.
     # To use in yaml, remove the default "map" value in the tb3_simulation_launch.py file & provide full path to map below.
-    yaml_filename: "/home/sumukh/ros2_ws/src/toto_simulation_ros2/toto2_description/house.yaml"
+    yaml_filename: "/home/sumukh/ros2_ws/src/toto_simulation_ros2/toto2_description/office.yaml"
 
 map_saver:
   ros__parameters:

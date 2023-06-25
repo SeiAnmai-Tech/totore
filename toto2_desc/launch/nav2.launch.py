@@ -19,7 +19,7 @@ def generate_launch_description():
   world_path = os.path.join(pkg_share, 'worlds', world_file_name)
   nav2_dir = FindPackageShare(package='toto2_nav').find('toto2_nav') 
   nav2_launch_dir = os.path.join(nav2_dir, 'launch') 
-  static_map_path = os.path.join(pkg_share, 'maps', 'house.yaml')
+  static_map_path = os.path.join(pkg_share, 'maps', 'office.yaml')
   nav2_params_path = os.path.join(param_pkg_share, 'params', 'toto2_nav2_params.yaml')
   nav2_bt_path = FindPackageShare(package='nav2_bt_navigator').find('nav2_bt_navigator')
   behavior_tree_xml_path = os.path.join(nav2_bt_path, 'behavior_trees', 'navigate_w_replanning_and_recovery.xml')
@@ -96,7 +96,7 @@ def generate_launch_description():
 
   declare_slam_cmd = DeclareLaunchArgument(
     name='slam',
-    default_value='True',
+    default_value='False',
     description='Whether to run SLAM')
     
   declare_use_robot_state_pub_cmd = DeclareLaunchArgument(

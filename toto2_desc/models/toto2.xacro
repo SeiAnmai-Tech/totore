@@ -21,7 +21,7 @@
       <geometry>
         <mesh filename="package://toto2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <!-- <material name="silver"/> -->
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 -1.57079633"/>
@@ -42,7 +42,7 @@
       <geometry>
         <mesh filename="package://toto2_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <!-- <material name="silver"/> -->
     </visual>
     <collision>
       <origin xyz="-0.1195 0.0 -0.05" rpy="0 0 0"/>
@@ -63,7 +63,7 @@
       <geometry>
         <mesh filename="package://toto2_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <!-- <material name="silver"/> -->
     </visual>
     <collision>
       <origin xyz="0.1195 0.0 -0.05" rpy="0 0 0"/>
@@ -86,7 +86,7 @@
       <geometry>
         <mesh filename="package://toto2_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <!-- <material name="silver"/> -->
     </visual>
     <collision>
       <origin xyz="0.0 -0.085 -0.17" rpy="0 0 0"/>

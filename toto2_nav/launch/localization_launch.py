@@ -29,7 +29,7 @@ from nav2_common.launch import RewrittenYaml
 def generate_launch_description():
     # Get the launch directory
     bringup_dir = get_package_share_directory('toto2_nav')
-    map_bringup_dir = get_package_share_directory('toto2_description')
+    map_bringup_dir = get_package_share_directory('toto2_desc')
 
     namespace = LaunchConfiguration('namespace')
     map_yaml_file = LaunchConfiguration('map')
@@ -74,7 +74,7 @@ def generate_launch_description():
 
     declare_map_yaml_cmd = DeclareLaunchArgument(
         'map',
-        default_value=os.path.join(map_bringup_dir, 'maps', 'house.yaml'),
+        default_value=os.path.join(map_bringup_dir, 'maps', 'office.yaml'),
         description='Full path to map yaml file to load')
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
