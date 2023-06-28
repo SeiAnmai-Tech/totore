@@ -13,13 +13,25 @@ def generate_launch_description():
 
     # Add the second command: ros2 launch toto2_desc slam.launch.py
     ros2_command = ExecuteProcess(
-        cmd=['ros2', 'launch', 'toto2_desc', 'slam.launch.py']
+        cmd=['ros2', 'launch', 'toto2_desc', 'odom.launch.py']
     )
     ld.add_action(ros2_command)
 
     # Add the third command: ros2 launch rplidar_ros rplidar.launch.py
     rplidar_command = ExecuteProcess(
         cmd=['ros2', 'launch', 'rplidar_ros', 'rplidar.launch.py']
+    )
+    ld.add_action(rplidar_command)
+
+    # Add the fourth command: ros2 launch toto2_desc nav2.launch.py
+    rplidar_command = ExecuteProcess(
+        cmd=['ros2', 'launch', 'toto2_desc', 'nav2.launch.py']
+    )
+    ld.add_action(rplidar_command)
+
+    # Add the fifth command: ros2 launch toto2_cam demo_launch.py
+    rplidar_command = ExecuteProcess(
+        cmd=['ros2', 'launch', 'toto2_cam', 'demo_launch.py']
     )
     ld.add_action(rplidar_command)
 

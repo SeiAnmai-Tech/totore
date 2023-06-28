@@ -32,14 +32,14 @@ Go to terminal and run:
 To launch the navigation stack:
 
 1. Run `ros2 launch toto2_desc nav2.launch.py`.
-2. Once `nav2.launch.py` runs and shows warning that no initial pose found, then run `ros2 run py_pubsub initialpose`.
+2. Now run `ros2 launch toto2_nav rviz_launch.py` in your PC and click the **Set 2D Pose Estimate** button in the RViz2 menu and set robot's initial position.
 3. After this, click the **Navigation2 Goal** button in the RViz2 menu.
 4. Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
 
 Waypoint Navigation:
 
 1. Run `ros2 launch toto2_desc nav2.launch.py`.
-2. Once `nav2.launch.py` runs and shows warning that no initial pose found, then run `ros2 run py_pubsub initialpose`.
+2. Now run `ros2 launch toto2_nav rviz_launch.py` in your PC and click the **Set 2D Pose Estimate** button in the RViz2 menu and set robot's initial position.
 3. Click **Navigation2 Goal** button, and click on areas of the map where you would like your robot to go (i.e. select your waypoints). Select as many waypoints as you want.
 5. When you’re ready for the robot to follow the waypoints, click the **Start Navigation** button in the bottom left corner of RViz.
 
