@@ -130,7 +130,7 @@
     <axis xyz="0.0 0.0 1.0" />
   </joint>
 
-  <joint name="camera_joint_1" type="fixed">
+  <!-- <joint name="camera_joint_1" type="fixed">
     <parent link="base_link"/>
     <child link="camera_link1_1"/>
     <origin xyz="0.16 0.0 0.2795" rpy="0 0 0" />
@@ -138,6 +138,20 @@
   </joint>
 
   <joint name="camera_joint_2" type="fixed">
+    <parent link="camera_link1_1"/>
+    <child link="camera_link2_1"/>
+    <origin xyz="0.03 0.0 0.042" rpy="0 0 0" />
+    <axis xyz="0.0 1.0 0.0" />
+  </joint> -->
+
+  <joint name="camera_joint_1" type="continuous">
+    <parent link="base_link"/>
+    <child link="camera_link1_1"/>
+    <origin xyz="0.16 0.0 0.2795" rpy="0 0 0" />
+    <axis xyz="0.0 0.0 1.0" />
+  </joint>
+
+  <joint name="camera_joint_2" type="continuous">
     <parent link="camera_link1_1"/>
     <child link="camera_link2_1"/>
     <origin xyz="0.03 0.0 0.042" rpy="0 0 0" />
