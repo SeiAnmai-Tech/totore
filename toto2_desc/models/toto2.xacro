@@ -106,7 +106,15 @@
   <link name="camera_1">
   </link>
 
+  <!-- IMU -->
   <link name="imu_link">
+  </link>
+
+  <!-- SHARP SENSOR -->
+  <link name="left_sharp">
+  </link>
+
+  <link name="right_sharp">
   </link>
 
   <!-- Joints -->
@@ -114,6 +122,18 @@
     <parent link="base_link"/>
     <child link="lidar_1"/>
     <origin xyz="0.1 0.0 0.17" rpy="0 0 3.14"/>
+  </joint>
+
+  <joint name="left_sharp_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_sharp"/>
+    <origin xyz="0.187 0.14 0.0" rpy="0 0.7853981 0"/>
+  </joint>
+
+  <joint name="right_sharp_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_sharp"/>
+    <origin xyz="0.187 -0.14 0.0" rpy="0 0.7853981 0"/>
   </joint>
 
   <joint name="base" type="fixed">
@@ -148,7 +168,7 @@
     <parent link="base_link"/>
     <child link="camera_link1_1"/>
     <origin xyz="0.16 0.0 0.2795" rpy="0 0 0" />
-    <axis xyz="0.0 0.0 1.0" />
+    <axis xyz="0.0 0.0 -1.0" />
   </joint>
 
   <joint name="camera_joint_2" type="continuous">

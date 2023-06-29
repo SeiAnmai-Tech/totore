@@ -27,6 +27,13 @@ def generate_launch_description():
     )
     ld.add_action(servo_state_node)
 
+    # Add the fourth command: ros2 run py_pubsub sharp
+    # sharp_node = Node(
+    #     package='py_pubsub',
+    #     executable='sharp'
+    # )
+    # ld.add_action(sharp_node)
+
     return ld
 
 if __name__ == '__main__':

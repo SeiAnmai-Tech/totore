@@ -194,18 +194,28 @@ local_costmap:
       plugins: ["obstacle_layer", "voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 4.0
-        inflation_radius: 0.3
+        cost_scaling_factor: 3.0
+        inflation_radius: 0.4
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
-        observation_sources: scan
+        observation_sources: scan left_sharp right_sharp
         scan:
           topic: /scan
           max_obstacle_height: 2.0
           clearing: True
           marking: True
           data_type: "LaserScan"
+        left_sharp:
+          topic: /left_sharp
+          data_type: "sensor_msgs/Range"
+          clearing: True
+          marking: True
+        right_sharp:
+          topic: /right_sharp
+          data_type: "sensor_msgs/Range"
+          clearing: True
+          marking: True
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True

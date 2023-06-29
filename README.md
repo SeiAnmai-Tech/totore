@@ -13,12 +13,16 @@ Go to terminal and run:
 
 1. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200`
 2. `ros2 launch rplidar_ros rplidar.launch.py`
-3. `ros2 launch toto2_desc odom.launch.py`
+3. `ros2 launch toto2_desc nodes.launch.py`
+
+**To run camera:**
+1. Run `ros2 launch toto2_cam demo_launch.py`. 
+2. Then, in your PC run `ros2 run rqt_image_view rqt_image_view`.
 
 **SLAM:** 
 
 1. Run `ros2 launch toto2_desc nav2.launch.py slam:=True`.
-2. For keyboard control, run `ros2 run toto2_teleop teleop_keyboard` **OR** run `ros2 launch toto2_desc joystick.launch.py` to control using PS4 controller in your PC.
+2. For keyboard control, run `ros2 run toto2_teleop keyboard` **OR** run `ros2 launch toto2_desc joystick.launch.py` to control using PS4 controller in your PC.
 3. To save your map run `ros2 run nav2_map_server map_saver_cli -f ~/{name_of_your_map}` in your PC.
 
 **Navigation:**
