@@ -97,18 +97,18 @@
   </link>
 
   <!-- CAMERA -->
-  <link name="camera_link1_1">
+  <link name="camera_link1">
   </link>
 
-  <link name="camera_link2_1">
+  <link name="camera_link2">
   </link>
 
   <link name="camera_1">
   </link>
 
   <!-- IMU -->
-  <link name="imu_link">
-  </link>
+  <!-- <link name="imu_link">
+  </link> -->
 
   <!-- SHARP SENSOR -->
   <link name="left_sharp">
@@ -127,59 +127,59 @@
   <joint name="left_sharp_joint" type="fixed">
     <parent link="base_link"/>
     <child link="left_sharp"/>
-    <origin xyz="0.187 0.14 0.0" rpy="0 0.7853981 0"/>
+    <origin xyz="0.187 0.14 0.08" rpy="0 0.7853981 0"/>
   </joint>
 
   <joint name="right_sharp_joint" type="fixed">
     <parent link="base_link"/>
     <child link="right_sharp"/>
-    <origin xyz="0.187 -0.14 0.0" rpy="0 0.7853981 0"/>
+    <origin xyz="0.187 -0.14 0.08" rpy="0 0.7853981 0"/>
   </joint>
 
   <joint name="base" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0.0 0.0 0.1" rpy="0 0 0" />
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
     <axis xyz="0.0 0.0 1.0" />
   </joint>
 
-  <joint name="imu_joint" type="fixed">
+  <!-- <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>
     <origin xyz="0.0 0.0 0.17" rpy="0 0 0" />
     <axis xyz="0.0 0.0 1.0" />
-  </joint>
+  </joint> -->
 
   <!-- <joint name="camera_joint_1" type="fixed">
     <parent link="base_link"/>
-    <child link="camera_link1_1"/>
+    <child link="camera_link1"/>
     <origin xyz="0.16 0.0 0.2795" rpy="0 0 0" />
     <axis xyz="0.0 0.0 1.0" />
   </joint>
 
   <joint name="camera_joint_2" type="fixed">
-    <parent link="camera_link1_1"/>
-    <child link="camera_link2_1"/>
+    <parent link="camera_link1"/>
+    <child link="camera_link2"/>
     <origin xyz="0.03 0.0 0.042" rpy="0 0 0" />
     <axis xyz="0.0 1.0 0.0" />
   </joint> -->
 
   <joint name="camera_joint_1" type="continuous">
     <parent link="base_link"/>
-    <child link="camera_link1_1"/>
+    <child link="camera_link1"/>
     <origin xyz="0.16 0.0 0.2795" rpy="0 0 0" />
     <axis xyz="0.0 0.0 -1.0" />
   </joint>
 
   <joint name="camera_joint_2" type="continuous">
-    <parent link="camera_link1_1"/>
-    <child link="camera_link2_1"/>
+    <parent link="camera_link1"/>
+    <child link="camera_link2"/>
     <origin xyz="0.03 0.0 0.042" rpy="0 0 0" />
     <axis xyz="0.0 1.0 0.0" />
   </joint>
 
   <joint name="camera_joint" type="fixed">
-    <parent link="camera_link2_1"/>
+    <parent link="camera_link2"/>
     <child link="camera_1"/>
     <origin xyz="0.020 0.01 0.015" rpy="-1.57079632679 0 -1.57079632679" />
   </joint>

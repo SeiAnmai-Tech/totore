@@ -12,8 +12,9 @@ Go to terminal and run:
 **Run these commands everytime:** 
 
 1. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200`
-2. `ros2 launch rplidar_ros rplidar.launch.py`
-3. `ros2 launch toto2_desc nodes.launch.py`
+2. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM1 -b 115200`
+3. `ros2 launch rplidar_ros rplidar.launch.py`
+4. `ros2 launch toto2_desc nodes.launch.py`
 
 **To run camera:**
 1. Run `ros2 launch toto2_cam demo_launch.py`. 
