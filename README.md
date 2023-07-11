@@ -27,7 +27,8 @@ Go to terminal and run:
 1. Run `ros2 launch aruco_ros double.launch.py` (OR) launch camera and aruco using `ros2 launch toto2_desc cam.launch.py`. 
 
 **To Dock autonomously:**
-1. Run camera and ArUco first and then run `ros2 run py_pubsub gotodock`.
+1. Run camera and ArUco first and then run `ros2 run py_pubsub gotogoal`.
+2. Then run `ros2 run py_pubsub goalpub`.
 
 **SLAM:** 
 
