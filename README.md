@@ -9,16 +9,25 @@ Go to terminal and run:
 4. `git clone <SSH_Key_of_github_repo>`
 5. `cd toto2/`
 
-**Run these commands everytime:** 
+**Keyboard controls:** 
+1. `ros2 run toto2_teleop keyboard`.
+2. 
 
-1. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200`
-2. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM1 -b 115200`
-3. `ros2 launch rplidar_ros rplidar.launch.py`
-4. `ros2 launch toto2_desc nodes.launch.py`
+**Run these commands everytime:** 
+1. `ros2 run py_pubsub pico_reset`
+2. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200`
+3. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM1 -b 115200`
+4. `ros2 launch toto2_desc everything.launch.py`
 
 **To run camera:**
 1. Run `ros2 launch toto2_cam demo_launch.py`. 
-2. Then, in your PC run `ros2 run rqt_image_view rqt_image_view`.
+2. Then, in your PC run `ros2 run rqt_image_view rqt_image_view` to see camera's output.
+
+**To run ArUco:**
+1. Run `ros2 launch aruco_ros double.launch.py` (OR) launch camera and aruco using `ros2 launch toto2_desc cam.launch.py`. 
+
+**To Dock autonomously:**
+1. Run camera and ArUco first and then run `ros2 run py_pubsub gotodock`.
 
 **SLAM:** 
 
