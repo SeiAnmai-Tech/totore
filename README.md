@@ -24,7 +24,7 @@ Go to terminal and run:
 2. Then, in your PC run `ros2 run rqt_image_view rqt_image_view` to see camera's output.
 
 **To run ArUco:**
-1. Run `ros2 launch aruco_ros double.launch.py` (OR) launch camera and aruco using `ros2 launch toto2_desc cam.launch.py`. 
+1. Run `ros2 launch aruco_ros marker_publisher.launch.py` (OR) launch camera and aruco using `ros2 launch toto2_desc cam.launch.py`. 
 
 **To Dock autonomously:**
 1. Run camera and ArUco first and then run `ros2 run py_pubsub gotogoal`.
@@ -48,14 +48,14 @@ To launch the navigation stack:
 
 1. Run `ros2 launch toto2_desc nav2.launch.py`.
 2. Now run `ros2 launch toto2_nav rviz_launch.py` in your PC and click the **Set 2D Pose Estimate** button in the RViz2 menu and set robot's initial position.
-3. After this, click the **Navigation2 Goal** button in the RViz2 menu.
+3. After this, click the **Nav2 Goal** button in the RViz2 menu.
 4. Click on the map to set the destination of the robot and drag the green arrow toward the direction where the robot will be facing.
 
 Waypoint Navigation:
 
 1. Run `ros2 launch toto2_desc nav2.launch.py`.
 2. Now run `ros2 launch toto2_nav rviz_launch.py` in your PC and click the **Set 2D Pose Estimate** button in the RViz2 menu and set robot's initial position.
-3. Click **Navigation2 Goal** button, and click on areas of the map where you would like your robot to go (i.e. select your waypoints). Select as many waypoints as you want.
+3. Click **Nav2 Goal** button, and click on areas of the map where you would like your robot to go (i.e. select your waypoints). Select as many waypoints as you want.
 5. When you’re ready for the robot to follow the waypoints, click the **Start Navigation** button in the bottom left corner of RViz.
 
 **Note:** 

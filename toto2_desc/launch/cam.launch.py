@@ -13,7 +13,7 @@ def generate_launch_description():
 
     # Add the second command: ros2 launch aruco_ros double.launch.py
     rplidar_command = ExecuteProcess(
-        cmd=['ros2', 'launch', 'aruco_ros', 'double.launch.py']
+        cmd=['ros2', 'launch', 'aruco_ros', 'marker_publisher.launch.py']
     )
     ld.add_action(rplidar_command)
 
