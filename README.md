@@ -9,6 +9,8 @@
 6. `chmod +x install.sh`
 7. `./install.sh`
 
+**In your robot, Install this package and the pypubsub package
+
 **Run these commands everytime before starting to work with robot:** 
 1. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200`
 2. `docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM1 -b 115200`
